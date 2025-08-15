@@ -1,0 +1,27 @@
+# Proteger carpeta de uploads
+<Files "*.php">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+<Files "*.html">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+<Files "*.js">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+# Permitir solo archivos de imagen y PDF
+<FilesMatch "\.(jpg|jpeg|png|gif|pdf)$">
+    Order Allow,Deny
+    Allow from all
+</FilesMatch>
+
+# Denegar acceso a archivos ocultos
+<Files ".*">
+    Order Allow,Deny
+    Deny from all
+</Files>

@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: innovant_cafe_mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: innovant_cafe
+      MYSQL_USER: innovant_user
+      MYSQL_PASSWORD: innovant123
+    ports:
+      - "8081:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
+    command: --default-authentication-plugin=mysql_native_password
+    networks:
+      - innovant_network
+
+  php:
+    image: php:8.1-apache
+    container_name: innovant_cafe_php
+    restart: unless-stopped
+    ports:
+      - "8000:80"
+    volumes:
+      - .:/var/www/html
+    working_dir: /var/www/html
+    depends_on:
+      - mysql
+    environment:
+      - APACHE_DOCUMENT_ROOT=/var/www/html
+    command: >
+      sh -c "a2enmod rewrite &&
+              docker-php-ext-install pdo pdo_mysql &&
+              apache2-foreground"
+    networks:
+      - innovant_network
+
+volumes:
+  mysql_data:
+
+networks:
+  innovant_network:
+    driver: bridge

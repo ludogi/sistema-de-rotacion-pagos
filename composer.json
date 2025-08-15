@@ -1,0 +1,17 @@
+{
+    "name": "innovant/cafe",
+    "description": "Sistema de Gestión de Cafetería Innovant",
+    "type": "project",
+    "version": "1.0.0",
+    "require": {
+        "php": ">=8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "InnovantCafe\\": "src/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true
+    }
+}

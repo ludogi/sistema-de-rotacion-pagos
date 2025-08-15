@@ -1,0 +1,25 @@
+# Configuración de la aplicación Innovant Café
+# Copia este archivo como .env y ajusta los valores según tu entorno
+
+# URL base de la aplicación (obligatorio para producción)
+APP_URL=https://tudominio.com
+
+# Configuración de base de datos
+DB_HOST=mysql
+DB_PORT=3306
+DB_NAME=innovant_cafe
+DB_USER=root
+DB_PASS=luis
+
+# Configuración de email
+MAIL_FROM_EMAIL=noreply@tudominio.com
+MAIL_FROM_NAME=Innovant Café
+MAIL_SMTP_HOST=smtp.tudominio.com
+MAIL_SMTP_PORT=587
+MAIL_SMTP_USER=tu_usuario
+MAIL_SMTP_PASS=tu_password
+MAIL_SMTP_ENCRYPTION=tls
+
+# Configuración de la aplicación
+APP_DEBUG=false
+APP_TIMEZONE=Europe/Madrid

@@ -1,0 +1,120 @@
+# ===== ARCHIVOS DEL SISTEMA =====
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ===== ARCHIVOS DE DESARROLLO =====
+*.log
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# ===== ARCHIVOS DE CONFIGURACIÓN LOCAL =====
+config_local.php
+.env
+.env.local
+.env.production
+.env.staging
+
+# ===== DIRECTORIOS DE UPLOADS =====
+uploads/tickets/*
+!uploads/tickets/.gitkeep
+
+# ===== ARCHIVOS DE BASE DE DATOS =====
+*.db
+*.sqlite
+*.sqlite3
+database/*.db
+database/*.sqlite
+
+# ===== ARCHIVOS DE COMPOSER =====
+/vendor/
+composer.phar
+composer.lock
+
+# ===== ARCHIVOS DE NODE/NPM =====
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ===== ARCHIVOS DE IDE =====
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# ===== ARCHIVOS DE DOCKER =====
+docker-compose.override.yml
+.dockerignore
+
+# ===== ARCHIVOS DE BACKUP =====
+*.bak
+*.backup
+*.old
+*.orig
+
+# ===== ARCHIVOS DE CACHE =====
+cache/
+tmp/
+temp/
+
+# ===== ARCHIVOS DE LOGS =====
+logs/
+*.log
+
+# ===== ARCHIVOS DE TEST =====
+test_*.php
+test_*.html
+test_*.sql
+
+# ===== ARCHIVOS DE CONFIGURACIÓN SENSIBLE =====
+config/database_local.php
+config/database_production.php
+
+# ===== ARCHIVOS DE SISTEMA =====
+*.pid
+*.seed
+*.pid.lock
+
+# ===== ARCHIVOS DE COMPILACIÓN =====
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# ===== ARCHIVOS DE COMPRESIÓN =====
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# ===== ARCHIVOS DE MEDIA =====
+*.mp3
+*.mp4
+*.avi
+*.mov
+*.wmv
+
+# ===== ARCHIVOS DE DOCUMENTACIÓN TEMPORAL =====
+*.md~
+*.txt~
+SISTEMA_TICKETS_*.md
+CRON_SETUP.md
+
+# ===== ARCHIVOS DE DESARROLLO TEMPORAL =====
+*.dev
+*.test
+*.local

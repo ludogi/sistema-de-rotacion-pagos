@@ -1,0 +1,76 @@
+RewriteEngine On
+
+# Redirigir a login.php por defecto
+DirectoryIndex login.php
+
+# URLs amigables - Enrutamiento principal
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Enrutamiento para páginas principales
+RewriteRule ^login/?$ login.php [L,QSA]
+RewriteRule ^logout/?$ logout.php [L,QSA]
+RewriteRule ^reset-password/?$ reset_password.php [L,QSA]
+RewriteRule ^admin/?$ index.php?section=admin [L,QSA]
+RewriteRule ^productos/?$ index.php?section=productos [L,QSA]
+RewriteRule ^trabajadores/?$ index.php?section=trabajadores [L,QSA]
+RewriteRule ^reportes/?$ index.php?section=reportes [L,QSA]
+RewriteRule ^rotacion/?$ index.php?section=rotacion [L,QSA]
+
+# Enrutamiento para acciones específicas
+RewriteRule ^producto/([0-9]+)/?$ index.php?section=producto&id=$1 [L,QSA]
+RewriteRule ^trabajador/([0-9]+)/?$ index.php?section=trabajador&id=$1 [L,QSA]
+RewriteRule ^compra/([0-9]+)/?$ index.php?section=compra&id=$1 [L,QSA]
+
+# Proteger archivos sensibles
+<Files "*.sql">
+    Order allow,deny
+    Deny from all
+</Files>
+
+<Files "*.env">
+    Order allow,deny
+    Deny from all
+</Files>
+
+<Files "composer.*">
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Proteger directorios sensibles
+<Files "src/">
+    Order allow,deny
+    Deny from all
+</Files>
+
+<Files "config/">
+    Order allow,deny
+    Deny from all
+</Files>
+
+<Files "test/">
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Permitir acceso a archivos PHP principales
+<Files "index.php">
+    Order allow,deny
+    Allow from all
+</Files>
+
+<Files "login.php">
+    Order allow,deny
+    Allow from all
+</Files>
+
+<Files "logout.php">
+    Order allow,deny
+    Allow from all
+</Files>
+
+<Files "reset_password.php">
+    Order allow,deny
+    Allow from all
+</Files>
